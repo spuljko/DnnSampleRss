@@ -1,0 +1,38 @@
+﻿[JavaScript:{ jsname: "JQuery" }]
+[JavaScript:{ jsname: "Knockout" }]
+[JavaScript:{ path: "~/Resources/Shared/scripts/dnn.jquery.js"}]
+[JavaScript:{ path: "~/DesktopModules/CustomFeeds/scripts/FeedView.js"}]
+[JavaScript:{ path: "~/DesktopModules/CustomFeeds/scripts/kendo.all.min.js"}]
+
+[Css:{ path: "~/DesktopModules/CustomFeeds/Styles/kendo.common.min.css"}]
+[Css:{ path: "~/DesktopModules/CustomFeeds/Styles/kendo.default.min.css"}]
+
+
+<grid id="customFeedsGrid">
+
+</grid>
+
+<script type="text/javascript">
+    var moduleId = parseInt("[ModuleContext:ModuleId]");
+</script>
+
+<style>
+
+    .k-edit-form-container {
+        width: 900px;
+    }
+    .k-popup-edit-form .k-edit-label {
+        width: 20%;
+        text-align: left;
+    }
+    .k-popup-edit-form .k-edit-field {
+        width: 70%;
+    }
+    .k-popup-edit-form .k-edit-field > .k-textbox,
+    .k-popup-edit-form .k-edit-field > .k-widget:not(.k-tooltip) {
+        width: 98%;
+    }
+    .k-popup-edit-form .k-edit-field > textarea {
+        width: 97%;
+    }
+</style>
