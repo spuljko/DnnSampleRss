@@ -5,7 +5,7 @@
         framework: $.ServicesFramework(moduleId)
     }
     service.baseUrl = service.framework.getServiceRoot(service.path) + "Feed/";
-    baseUrl = '/DesktopModules/CustomFeeds/API/Feed/';
+    baseUrl = portalUrl + '/DesktopModules/CustomFeeds/API/Feed/';
 
     $("#customFeedsGrid").kendoGrid({
         dataSource: {
