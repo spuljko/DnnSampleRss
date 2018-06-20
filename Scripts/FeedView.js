@@ -4,8 +4,13 @@
         path: "CustomFeeds",
         framework: $.ServicesFramework(moduleId)
     }
-    service.baseUrl = service.framework.getServiceRoot(service.path) + "Feed/";
-    baseUrl = portalUrl + '/DesktopModules/CustomFeeds/API/Feed/';
+    baseUrl = service.framework.getServiceRoot(service.path);
+    // vraća krivi url pa se treba kemijat
+    //getServiceRot = "gdi/Api/CustomFeeds"
+    //ispravno = gdi/DesktopModules/CustomFeeds/API/Feed
+alert(baseUrl);
+    baseUrl = baseUrl.replace('API/CustomFeeds', 'DesktopModules/CustomFeeds/API/Feed');
+alert(baseUrl);
 
     $("#customFeedsGrid").kendoGrid({
         dataSource: {
