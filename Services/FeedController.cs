@@ -17,6 +17,8 @@ using DotNetNuke.Services.Exceptions;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using log4net;
+using DotNetNuke.Instrumentation;
 
 namespace Demo.Modules.CustomFeeds.Services
 {
@@ -44,6 +46,8 @@ namespace Demo.Modules.CustomFeeds.Services
         {
             try
             {
+                LoggerSource.Instance.GetLogger(typeof(FeedController)).Fatal("test mesage");
+                throw new Exception("Test excetion");
                 string helloWorld = "Hello World!";
                 return Request.CreateResponse(HttpStatusCode.OK, helloWorld);
             }
@@ -61,6 +65,7 @@ namespace Demo.Modules.CustomFeeds.Services
         {
             try
             {
+                
                 var item = _repository.GetById(feedId);
 
                 _repository.Delete(item);
@@ -119,7 +124,7 @@ namespace Demo.Modules.CustomFeeds.Services
 
             try
             {
-
+                LoggerSource.Instance.GetLogger(typeof(FeedController)).Trace("GetList called");
                 items = _repository.GetAll()
                        .Select(item => new FeedViewModel(item, this.PortalSettings.PortalId))
                        .ToList();
